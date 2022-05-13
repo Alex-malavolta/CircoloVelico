@@ -1,0 +1,815 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Polyline?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="initial_page" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="prova_scene_builder.FXMLDocumentController">
+    <children>
+      <AnchorPane fx:id="welcome" prefHeight="500.0" prefWidth="600.0">
+         <children>
+            <ImageView fx:id="logo" fitHeight="422.0" fitWidth="386.0" layoutY="91.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@logo.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="btn_registrazione" layoutX="391.0" layoutY="407.0" mnemonicParsing="false" onAction="#esegui_registrazione" prefHeight="32.0" prefWidth="150.0" text="Registrati">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+            </Button>
+            <Label fx:id="label_login" layoutX="430.0" layoutY="106.0" text="Login" textFill="#0f1184">
+               <font>
+                  <Font name="Bernard MT Condensed" size="36.0" />
+               </font>
+            </Label>
+            <Label fx:id="label_password" layoutX="420.0" layoutY="258.0" text="Password:" textFill="#0f1184">
+               <font>
+                  <Font name="Bernard MT Condensed" size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="label_username" layoutX="417.0" layoutY="171.0" prefHeight="30.0" prefWidth="101.0" text="Username:" textFill="#0f1184">
+               <font>
+                  <Font name="Bernard MT Condensed" size="24.0" />
+               </font>
+            </Label>
+            <PasswordField fx:id="password_field" layoutX="392.0" layoutY="298.0" />
+            <TextField fx:id="username_field" layoutX="393.0" layoutY="224.0" />
+              <Label fx:id="label_presentazione" layoutX="64.0" minHeight="16" minWidth="69" prefHeight="75.0" prefWidth="494.0" text="Benvenuto/a in vela con noi" textFill="#004794">
+               <font>
+                  <Font name="Papyrus" size="38.0" />
+               </font>
+            </Label>
+              <Button fx:id="btn_login" layoutX="391.0" layoutY="352.0" onAction="#esegui_login" prefHeight="32.0" prefWidth="150.0" text="Login">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="log_pers" layoutX="415.0" layoutY="449.0" mnemonicParsing="false" onAction="#log_personale" text="Login Personale">
+               <font>
+                  <Font name="Bernard MT Condensed" size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="registrazione" prefHeight="500.0" prefWidth="600.0" visible="false">
+         <children>
+            <Label layoutX="126.0" layoutY="28.0" text="registrati come nuovo socio/a">
+               <font>
+                  <Font name="Bodoni MT Condensed Bold" size="36.0" />
+               </font>
+            </Label>
+            <Label layoutX="122.0" layoutY="91.0" text="compila i campi per completare la registrazione">
+               <font>
+                  <Font name="Bodoni MT Condensed Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="74.0" layoutY="159.0" text="Codice Fiscale:">
+               <font>
+                  <Font name="Bernard MT Condensed" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="74.0" layoutY="198.0" text="Username:">
+               <font>
+                  <Font name="Bernard MT Condensed" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="75.0" layoutY="238.0" text="Password:">
+               <font>
+                  <Font name="Bernard MT Condensed" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="74.0" layoutY="276.0" text="First Name:">
+               <font>
+                  <Font name="Bernard MT Condensed" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="75.0" layoutY="312.0" text="Last Name:">
+               <font>
+                  <Font name="Bernard MT Condensed" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="74.0" layoutY="350.0" text="Address:">
+               <font>
+                  <Font name="Bernard MT Condensed" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="75.0" layoutY="390.0" text="Credit Card:">
+               <font>
+                  <Font name="Bernard MT Condensed" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="75.0" layoutY="427.0" text="IBAN:">
+               <font>
+                  <Font name="Bernard MT Condensed" size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="campo_cf" layoutX="233.0" layoutY="161.0" />
+            <TextField fx:id="campo_username" layoutX="233.0" layoutY="200.0" />
+            <TextField fx:id="campo_password" layoutX="234.0" layoutY="240.0" />
+            <TextField fx:id="campo_first_name" layoutX="234.0" layoutY="278.0" />
+            <TextField fx:id="campo_last_name" layoutX="234.0" layoutY="314.0" />
+            <TextField fx:id="campo_address" layoutX="234.0" layoutY="352.0" />
+            <TextField fx:id="campo_credit_card" layoutX="234.0" layoutY="392.0" />
+            <TextField fx:id="campo_iban" layoutX="234.0" layoutY="429.0" />
+            <Button fx:id="btn_conferma_registrazione" layoutX="463.0" layoutY="249.0" mnemonicParsing="false" onAction="#conferma_registrazione" prefHeight="82.0" prefWidth="107.0" text="Registrati">
+               <font>
+                  <Font name="Bernard MT Condensed" size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="log_effettuato" prefHeight="500.0" prefWidth="600.0" visible="false">
+         <children>
+            <Label layoutX="36.0" layoutY="14.0" text="Welcome" textFill="#004794">
+               <font>
+                  <Font name="Papyrus" size="38.0" />
+               </font>
+            </Label>
+            <Label fx:id="user_name" layoutX="203.0" layoutY="14.0" text="Label" textFill="#004794">
+               <font>
+                  <Font name="Papyrus" size="38.0" />
+               </font>
+            </Label>
+            <Label layoutX="19.0" layoutY="114.0" text="Scegli l' operazione che desidera fare:">
+               <font>
+                  <Font name="Bernard MT Condensed" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="19.0" layoutY="166.0" text="~ Registra una imbarcazione">
+               <font>
+                  <Font name="Bernard MT Condensed" size="24.0" />
+               </font>
+            </Label>
+            <Button fx:id="btn_new_boat" layoutX="317.0" layoutY="163.0" mnemonicParsing="false" onAction="#new_boat" text="New Boat" textFill="#004794">
+               <font>
+                  <Font name="Bernard MT Condensed" size="18.0" />
+               </font>
+            </Button>
+            <Label layoutX="19.0" layoutY="228.0" text="~ Rimuovi una imbarcazione">
+               <font>
+                  <Font name="Bernard MT Condensed" size="24.0" />
+               </font>
+            </Label>
+            <Button fx:id="btn_removeboat" layoutX="317.0" layoutY="225.0" mnemonicParsing="false" onAction="#remove_boat" text="Remove boat" textFill="#004794">
+               <font>
+                  <Font name="Bernard MT Condensed" size="18.0" />
+               </font>
+            </Button>
+            <Label layoutX="19.0" layoutY="292.0" text="~ Paga quota di iscrizione al circolo">
+               <font>
+                  <Font name="Bernard MT Condensed" size="24.0" />
+               </font>
+            </Label>
+            <Button fx:id="paga_quota" layoutX="383.0" layoutY="289.0" mnemonicParsing="false" onAction="#esegui_pagamento_iscizione" prefHeight="35.0" prefWidth="62.0" text="Pay" textFill="#004794">
+               <font>
+                  <Font name="Bernard MT Condensed" size="18.0" />
+               </font>
+            </Button>
+            <Label layoutX="19.0" layoutY="358.0" text="~ Iscriviti ad una gara">
+               <font>
+                  <Font name="Bernard MT Condensed" size="24.0" />
+               </font>
+            </Label>
+            <Button fx:id="btn_iscr_gara" layoutX="262.0" layoutY="355.0" mnemonicParsing="false" onAction="#iscrivi_gara" text="Iscriviti" textFill="#004794">
+               <font>
+                  <Font name="Bernard MT Condensed" size="18.0" />
+               </font>
+            </Button>
+            <Label layoutX="19.0" layoutY="415.0" text="~Paga quota rimessaggio barca">
+               <font>
+                  <Font name="Bernard MT Condensed" size="24.0" />
+               </font>
+            </Label>
+            <Button fx:id="paga_rimessaggio" layoutX="349.0" layoutY="412.0" mnemonicParsing="false" onAction="#paga_rimessaggio_barca" text="Pay" textFill="#004794">
+               <font>
+                  <Font name="Bernard MT Condensed" size="18.0" />
+               </font>
+            </Button>
+            <Label fx:id="warning" layoutX="339.0" layoutY="26.0" textFill="RED">
+               <font>
+                  <Font name="Bernard MT Condensed" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="label_warning_iscr" layoutX="335.0" layoutY="53.0" textFill="#ff0606">
+               <font>
+                  <Font name="Bernard MT Condensed" size="18.0" />
+               </font>
+            </Label>
+         </children>
+         <effect>
+            <Blend />
+         </effect>
+      </AnchorPane>
+      <AnchorPane fx:id="registrazione_barca" prefHeight="500.0" prefWidth="600.0" visible="false">
+         <children>
+            <Label layoutX="109.0" layoutY="37.0" text="Inserisci i dati per registrare la tua barca" textAlignment="CENTER">
+               <font>
+                  <Font name="Bernard MT Condensed" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="15.0" layoutY="104.0" text="Inserisci il nome della barca:">
+               <font>
+                  <Font name="Bernard MT Condensed" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="175.0" text="Inserisci la lunghezza della barca:">
+               <font>
+                  <Font name="Bernard MT Condensed" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="227.0" text="Inserisci i tuo codice fiscale:">
+               <font>
+                  <Font name="Bernard MT Condensed" size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="text_barca_name" layoutX="308.0" layoutY="105.0" prefHeight="26.0" prefWidth="222.0" />
+            <TextField fx:id="text_barca_lunghezza" layoutX="337.0" layoutY="176.0" prefHeight="26.0" prefWidth="221.0" />
+            <TextField fx:id="text_cf_barca" layoutX="291.0" layoutY="228.0" prefHeight="26.0" prefWidth="222.0" />
+            <Button fx:id="btn_go_nuova_barca" layoutX="212.0" layoutY="441.0" mnemonicParsing="false" onAction="#go_new_boat" prefHeight="26.0" prefWidth="134.0" text="Registra">
+               <font>
+                  <Font name="Bernard MT Condensed" size="18.0" />
+               </font>
+            </Button>
+            <Label layoutX="14.0" layoutY="281.0" text="Inserisci la tua password per la convalida:">
+               <font>
+                  <Font name="Bernard MT Condensed" size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="check_reg_barca" layoutX="405.0" layoutY="283.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="rm_boat" prefHeight="500.0" prefWidth="600.0" visible="false">
+         <children>
+            <Label layoutX="115.0" layoutY="32.0" text="Compila i campi per rimuovere la barca">
+               <font>
+                  <Font name="Bernard MT Condensed" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="28.0" layoutY="128.0" text="Inserisci Il nome della barca">
+               <font>
+                  <Font name="Bernard MT Condensed" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="28.0" layoutY="203.0" text="Inserisci il tuo codice fiscale">
+               <font>
+                  <Font name="Bernard MT Condensed" size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="rm_nome_barca" layoutX="310.0" layoutY="130.0" prefHeight="26.0" prefWidth="175.0" />
+            <TextField fx:id="rm_cf_barca" layoutX="310.0" layoutY="204.0" prefHeight="26.0" prefWidth="175.0" />
+            <Button fx:id="btn_rimuovi_barca_conferma" layoutX="216.0" layoutY="366.0" mnemonicParsing="false" onAction="#rimuovi_barca_conferma" text="Rimuovi barca">
+               <font>
+                  <Font name="Bernard MT Condensed" size="24.0" />
+               </font>
+            </Button>
+            <Label layoutX="28.0" layoutY="280.0" text="Inserisci la tua password">
+               <font>
+                  <Font name="Bernard MT Condensed" size="24.0" />
+               </font>
+            </Label>
+            <PasswordField fx:id="psw_rm_barca" layoutX="310.0" layoutY="282.0" prefHeight="26.0" prefWidth="175.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="iscrizione_gara" prefHeight="500.0" prefWidth="600.0" visible="false">
+         <children>
+            <Label layoutX="47.0" layoutY="14.0" prefHeight="30.0" prefWidth="506.0" text="Compila i campi richiesti per iscrivere la tua imbarcazione ad una gara">
+               <font>
+                  <Font name="Bernard MT Condensed" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="12.0" layoutY="67.0" text="Nome della barca che vuoi iscrivere:">
+               <font>
+                  <Font name="Bernard MT Condensed" size="24.0" />
+               </font>
+            </Label>
+            <TableView fx:id="tabella" layoutX="199.0" layoutY="327.0" prefHeight="160.0" prefWidth="398.0">
+              <columns>
+                <TableColumn fx:id="id_gara" prefWidth="68.0" text="id_gara" />
+                <TableColumn fx:id="nome_gara" prefWidth="78.4000244140625" text="nome" />
+                  <TableColumn fx:id="prezzo_gara" prefWidth="71.20001220703125" text="prezzo" />
+                  <TableColumn fx:id="data_gara" text="data" />
+                  <TableColumn fx:id="luogo_gara" prefWidth="93.5999755859375" text="luogo" />
+              </columns>
+            </TableView>
+            <TextField fx:id="txt_nome_barca" layoutX="360.0" layoutY="68.0" prefHeight="26.0" prefWidth="175.0" />
+            <Label layoutX="12.0" layoutY="153.0" text="Inserisci l' id della gara alla quale desideri partecipare:">
+               <font>
+                  <Font name="Bernard MT Condensed" size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txt_id_gara" layoutX="535.0" layoutY="154.0" prefHeight="26.0" prefWidth="40.0" />
+            <Label layoutX="14.0" layoutY="367.0" text="Puoi visualizzare le gare ">
+               <font>
+                  <Font name="Bernard MT Condensed" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="390.0" text="disponibili al momento">
+               <font>
+                  <Font name="Bernard MT Condensed" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="435.0" prefHeight="30.0" prefWidth="40.0" text="Qui">
+               <font>
+                  <Font name="Bernard MT Condensed" size="24.0" />
+               </font>
+            </Label>
+            <Polyline fill="BLACK" layoutX="125.0" layoutY="425.0" points="39.0, -11.399993896484375, 71.0, 27.000030517578125, 39.0, 61.399993896484375, 39.0, 37.399993896484375" strokeType="INSIDE" />
+            <Line endX="62.0" endY="107.60000610351562" layoutX="102.0" layoutY="306.0" startX="62.0" startY="134.00003051757812" />
+            <Polyline fill="#0d0d0d" layoutX="94.0" layoutY="425.0" points="70.0, 15.000030517578125, 70.0, 37.399993896484375, 0.0, 37.399993896484375, 0.0, 15.000030517578125" strokeType="INSIDE" />
+            <Line endX="61.5" endY="24.500030517578125" layoutX="102.0" layoutY="416.0" startX="-8.0" startY="24.000030517578125" />
+            <Button fx:id="btn_iscrivit" layoutX="14.0" layoutY="318.0" mnemonicParsing="false" onAction="#iscrivi" text="Iscrivi">
+               <font>
+                  <Font name="Bernard MT Condensed" size="18.0" />
+               </font>
+            </Button>
+            <Label layoutX="12.0" layoutY="109.0" text="Inserisci il tuo codice fiscale:">
+               <font>
+                  <Font name="Bernard MT Condensed" size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txt_cf" layoutX="298.0" layoutY="111.0" />
+            <Label layoutX="12.0" layoutY="200.0" text="Inserisci L' importo del costo della gara alla quale disidera registrarsi:">
+               <font>
+                  <Font name="Bernard MT Condensed" size="19.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txt_importo" layoutX="533.0" layoutY="198.0" prefHeight="26.0" prefWidth="40.0" />
+            <Label layoutX="12.0" layoutY="233.0" text="Come desidera pagare? ">
+               <font>
+                  <Font name="Bernard MT Condensed" size="18.0" />
+               </font>
+            </Label>
+            <RadioButton fx:id="cartacredit" layoutX="210.0" layoutY="232.0" mnemonicParsing="false" text="Carta credito">
+               <font>
+                  <Font name="Bernard MT Condensed" size="18.0" />
+               </font>
+            </RadioButton>
+            <RadioButton fx:id="ibann" layoutX="366.0" layoutY="232.0" mnemonicParsing="false" text="iban">
+               <font>
+                  <Font name="Bernard MT Condensed" size="18.0" />
+               </font>
+            </RadioButton>
+            <Label layoutX="12.0" layoutY="273.0" text="Inserisci la tua password per la convalida:">
+               <font>
+                  <Font name="Bernard MT Condensed" size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="psw_convalida_iscr_gara" layoutX="406.0" layoutY="275.0" prefHeight="26.0" prefWidth="167.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="pagamento_iscrizione" prefHeight="500.0" prefWidth="600.0" visible="false">
+         <children>
+            <Label layoutX="93.0" layoutY="28.0" text="Compila i campi richiesti per eseguire il pagamento">
+               <font>
+                  <Font name="Bernard MT Condensed" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="101.0" text="Come desideri pagare:">
+               <font>
+                  <Font name="Bernard MT Condensed" size="24.0" />
+               </font>
+            </Label>
+            <RadioButton fx:id="carta_c_p" layoutX="247.0" layoutY="104.0" mnemonicParsing="false" text="Carta credito">
+               <font>
+                  <Font name="Bernard MT Condensed" size="18.0" />
+               </font>
+            </RadioButton>
+            <RadioButton fx:id="iban_p" layoutX="398.0" layoutY="104.0" mnemonicParsing="false" text="IBAN">
+               <font>
+                  <Font name="Bernard MT Condensed" size="18.0" />
+               </font>
+            </RadioButton>
+            <Label layoutX="14.0" layoutY="171.0" text="Inserisci il tuo codice fiscale:">
+               <font>
+                  <Font name="Bernard MT Condensed" size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="cf_pagamento_p" layoutX="308.0" layoutY="173.0" prefHeight="26.0" prefWidth="199.0" />
+            <Button fx:id="btn_pay" layoutX="246.0" layoutY="317.0" mnemonicParsing="false" onAction="#paga_nuova_iscrizione" text="PAY">
+               <font>
+                  <Font name="Bernard MT Condensed" size="24.0" />
+               </font>
+            </Button>
+            <Label layoutX="14.0" layoutY="250.0" text="Inserisci la tua password per la convalida:">
+               <font>
+                  <Font name="Bernard MT Condensed" size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="psw_conv_pag" layoutX="408.0" layoutY="252.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="pagamento_rimessaggio_b" prefHeight="500.0" prefWidth="600.0" visible="false">
+         <children>
+            <Label layoutX="21.0" layoutY="14.0" text="Pagina per il pagamento del rimessaggio della propria barca">
+               <font>
+                  <Font name="Bernard MT Condensed" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="21.0" layoutY="65.0" text="Inserisci la lunghezza della tua barca:">
+               <font>
+                  <Font name="Bernard MT Condensed" size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txt_lung" layoutX="306.0" layoutY="64.0" prefHeight="26.0" prefWidth="50.0" />
+            <Label layoutX="122.0" layoutY="109.0" text="Il prezzo da pagare sarà stabilito in base alla lunghezza della barca" textFill="#bd423a">
+               <font>
+                  <Font name="Bernard MT Condensed" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="21.0" layoutY="157.0" text="Dovrai pagare:">
+               <font>
+                  <Font name="Bernard MT Condensed" size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="l_lung" layoutX="182.0" layoutY="154.0" text="0.0">
+               <font>
+                  <Font name="System Bold Italic" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="220.0" text="Inserisci il tuo codice fiscale:">
+               <font>
+                  <Font name="Bernard MT Condensed" size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="cf_lung" layoutX="231.0" layoutY="219.0" />
+            <Label layoutX="14.0" layoutY="276.0" text="Scegli il metodo di pagamento:">
+               <font>
+                  <Font name="Bernard MT Condensed" size="18.0" />
+               </font>
+            </Label>
+            <RadioButton fx:id="cc_lung" layoutX="260.0" layoutY="275.0" mnemonicParsing="false" text="Carta credito">
+               <font>
+                  <Font name="Bernard MT Condensed" size="18.0" />
+               </font>
+            </RadioButton>
+            <RadioButton fx:id="iban_lung" layoutX="412.0" layoutY="275.0" mnemonicParsing="false" text="Iban">
+               <font>
+                  <Font name="Bernard MT Condensed" size="18.0" />
+               </font>
+            </RadioButton>
+            <Button fx:id="btn_lungh" layoutX="259.0" layoutY="393.0" mnemonicParsing="false" onAction="#pay_lung" text="Pay">
+               <font>
+                  <Font name="Bernard MT Condensed" size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="btn_calcola" layoutX="418.0" layoutY="64.0" mnemonicParsing="false" onAction="#calcola" text="Calcola">
+               <font>
+                  <Font name="Bernard MT Condensed" size="14.0" />
+               </font>
+            </Button>
+            <Label layoutX="254.0" layoutY="157.0" text="\$">
+               <font>
+                  <Font name="Bernard MT Condensed" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="348.0" text="Inserisci La tua password per la convalida:">
+               <font>
+                  <Font name="Bernard MT Condensed" size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="psw_con_pag_barca" layoutX="321.0" layoutY="347.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="personale_general" prefHeight="502.0" prefWidth="600.0" visible="false">
+         <children>
+            <Label layoutX="95.0" layoutY="10.0" text="Benvenuto/a">
+               <font>
+                  <Font name="Bernard MT Condensed" size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="nom_pers" layoutX="247.0" layoutY="10.0" text="Label">
+               <font>
+                  <Font name="Bernard MT Condensed" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="331.0" layoutY="10.0" text="nell' area del personale">
+               <font>
+                  <Font name="Bernard MT Condensed" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="75.0" text="~ Gestione soci">
+               <font>
+                  <Font name="Bernard MT Condensed" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="144.0" text="~ Gestione imbarcazioni">
+               <font>
+                  <Font name="Bernard MT Condensed" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="207.0" text="~ Gestione gare">
+               <font>
+                  <Font name="Bernard MT Condensed" size="24.0" />
+               </font>
+            </Label>
+            <Button layoutX="189.0" layoutY="72.0" mnemonicParsing="false" onAction="#gest_soci" text="Go">
+               <font>
+                  <Font name="Bernard MT Condensed" size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="btn_gest_imb" layoutX="260.0" layoutY="141.0" mnemonicParsing="false" onAction="#gest_imbarc" text="Go">
+               <font>
+                  <Font name="Bernard MT Condensed" size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="gestion_gara" layoutX="195.0" layoutY="204.0" mnemonicParsing="false" onAction="#gest_gar" text="Go">
+               <font>
+                  <Font name="Bernard MT Condensed" size="18.0" />
+               </font>
+            </Button>
+            <Label layoutX="14.0" layoutY="277.0" text="~ Gestione pagamenti">
+               <font>
+                  <Font name="Bernard MT Condensed" size="24.0" />
+               </font>
+            </Label>
+            <Button layoutX="247.0" layoutY="274.0" mnemonicParsing="false" onAction="#gest_pagam" text="Go">
+               <font>
+                  <Font name="Bernard MT Condensed" size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="gest_soc" layoutY="-1.0" prefHeight="502.0" prefWidth="600.0" visible="false">
+         <children>
+            <Label layoutX="240.0" layoutY="14.0" text="Gestione soci">
+               <font>
+                  <Font name="Bernard MT Condensed" size="24.0" />
+               </font>
+            </Label>
+            <TextArea fx:id="txt_cod" layoutX="6.0" layoutY="93.0" prefHeight="200.0" prefWidth="58.0" />
+            <TextArea fx:id="txt_us" layoutX="64.0" layoutY="93.0" prefHeight="200.0" prefWidth="62.0" />
+            <TextArea fx:id="txt_ps" layoutX="126.0" layoutY="93.0" prefHeight="200.0" prefWidth="50.0" />
+            <TextArea fx:id="txt_fn" layoutX="176.0" layoutY="93.0" prefHeight="200.0" prefWidth="66.0" />
+            <TextArea fx:id="txt_ln" layoutX="242.0" layoutY="93.0" prefHeight="200.0" prefWidth="63.0" />
+            <TextArea fx:id="txt_a" layoutX="305.0" layoutY="93.0" prefHeight="200.0" prefWidth="102.0" />
+            <TextArea fx:id="txt_db" layoutX="407.0" layoutY="93.0" prefHeight="200.0" prefWidth="120.0" />
+            <TextArea fx:id="txt_i" layoutX="527.0" layoutY="93.0" prefHeight="200.0" prefWidth="74.0" />
+            <Label layoutX="8.0" layoutY="63.0" text="Cod.Fisc">
+               <font>
+                  <Font name="Bernard MT Condensed" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="69.0" layoutY="65.0" text="Username">
+               <font>
+                  <Font name="Bernard MT Condensed" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="126.0" layoutY="65.0" text="Password">
+               <font>
+                  <Font name="Bernard MT Condensed" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="181.0" layoutY="65.0" text="First.Name">
+               <font>
+                  <Font name="Bernard MT Condensed" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="242.0" layoutY="66.0" text="Last.Name">
+               <font>
+                  <Font name="Bernard MT Condensed" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="330.0" layoutY="63.0" text="Address">
+               <font>
+                  <Font name="Bernard MT Condensed" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="431.0" layoutY="63.0" text="Debit.Card">
+               <font>
+                  <Font name="Bernard MT Condensed" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="548.0" layoutY="63.0" text="Iban">
+               <font>
+                  <Font name="Bernard MT Condensed" size="18.0" />
+               </font>
+            </Label>
+            <Button layoutX="47.0" layoutY="400.0" mnemonicParsing="false" onAction="#rim_soci" text="Rimuovi Socio">
+               <font>
+                  <Font name="Bernard MT Condensed" size="18.0" />
+               </font>
+            </Button>
+            <Label layoutX="21.0" layoutY="328.0" text="Inserisci il Cod.Fisc del socio:">
+               <font>
+                  <Font name="Bernard MT Condensed" size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="cf_gest_soci" layoutX="300.0" layoutY="330.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="gest_imb" prefHeight="502.0" prefWidth="602.0" visible="false">
+         <children>
+            <Label layoutX="198.0" layoutY="14.0" text="Gestione Imbarcazioni">
+               <font>
+                  <Font name="Bernard MT Condensed" size="24.0" />
+               </font>
+            </Label>
+            <TextArea fx:id="id_imb" layoutX="8.0" layoutY="104.0" prefHeight="200.0" prefWidth="63.0" />
+            <TextArea fx:id="nm_boat" layoutX="71.0" layoutY="104.0" prefHeight="200.0" prefWidth="166.0" />
+            <TextArea fx:id="ln_boat" layoutX="238.0" layoutY="104.0" prefHeight="200.0" prefWidth="94.0" />
+            <TextArea fx:id="cod_fis_ut" layoutX="333.0" layoutY="104.0" prefHeight="200.0" prefWidth="253.0" />
+            <Label layoutX="30.0" layoutY="74.0" text="Id">
+               <font>
+                  <Font name="Bernard MT Condensed" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="116.0" layoutY="77.0" text="Name.Boat">
+               <font>
+                  <Font name="Bernard MT Condensed" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="243.0" layoutY="77.0" text="Lenght.Boat">
+               <font>
+                  <Font name="Bernard MT Condensed" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="392.0" layoutY="74.0" text="Cod.Fisc.Utente">
+               <font>
+                  <Font name="Bernard MT Condensed" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="16.0" layoutY="336.0" text="Inserisci l' id dell imbarcazione:">
+               <font>
+                  <Font name="Bernard MT Condensed" size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="ig_gest_imb" layoutX="318.0" layoutY="338.0" />
+            <Button layoutX="30.0" layoutY="419.0" mnemonicParsing="false" onAction="#rim_imbarcazione_gest" text="Rimuovi imbarcazione">
+               <font>
+                  <Font name="Bernard MT Condensed" size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="gest_gare" layoutX="-2.0" prefHeight="502.0" prefWidth="602.0" visible="false">
+         <children>
+            <Label layoutX="237.0" layoutY="14.0" text="Gestione Gare">
+               <font>
+                  <Font name="Bernard MT Condensed" size="24.0" />
+               </font>
+            </Label>
+            <TextArea fx:id="id_g" layoutY="129.0" prefHeight="200.0" prefWidth="59.0" />
+            <TextArea fx:id="nome_gar" layoutX="61.0" layoutY="129.0" prefHeight="200.0" prefWidth="167.0" />
+            <TextArea fx:id="price" layoutX="209.0" layoutY="129.0" prefHeight="200.0" prefWidth="78.0" />
+            <TextArea fx:id="date" layoutX="288.0" layoutY="129.0" prefHeight="200.0" prefWidth="134.0" />
+            <TextArea fx:id="location" layoutX="421.0" layoutY="129.0" prefHeight="200.0" prefWidth="166.0" />
+            <Label layoutY="99.0" text="Id.Gara">
+               <font>
+                  <Font name="Bernard MT Condensed" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="106.0" layoutY="99.0" text="Nome.Gara">
+               <font>
+                  <Font name="Bernard MT Condensed" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="249.0" layoutY="99.0" text="Price">
+               <font>
+                  <Font name="Bernard MT Condensed" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="341.0" layoutY="95.0" text="Date">
+               <font>
+                  <Font name="Bernard MT Condensed" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="474.0" layoutY="99.0" text="Location">
+               <font>
+                  <Font name="Bernard MT Condensed" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="12.0" layoutY="372.0" text="Inserisci l' id della gara:">
+               <font>
+                  <Font name="Bernard MT Condensed" size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txt_gest_gare" layoutX="249.0" layoutY="377.0" />
+            <Button layoutX="27.0" layoutY="438.0" mnemonicParsing="false" onAction="#rm_gest_gara" text="Rimuovi gara">
+               <font>
+                  <Font name="Bernard MT Condensed" size="18.0" />
+               </font>
+            </Button>
+            <Button layoutX="433.0" layoutY="438.0" mnemonicParsing="false" onAction="#agg_gara" text="Aggiungi gara">
+               <font>
+                  <Font name="Bernard MT Condensed" size="24.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="gest_pag" prefHeight="502.0" prefWidth="602.0" visible="false">
+         <children>
+            <Label layoutX="209.0" layoutY="14.0" text="Gestione Pagamenti">
+               <font>
+                  <Font name="Bernard MT Condensed" size="24.0" />
+               </font>
+            </Label>
+            <TextArea fx:id="id_pag" layoutY="121.0" prefHeight="200.0" prefWidth="53.0" />
+            <TextArea fx:id="meth_pag" layoutX="54.0" layoutY="121.0" prefHeight="200.0" prefWidth="54.0" />
+            <TextArea fx:id="type_pag" layoutX="108.0" layoutY="121.0" prefHeight="200.0" prefWidth="150.0" />
+            <TextArea fx:id="impo" layoutX="258.0" layoutY="121.0" prefHeight="200.0" prefWidth="74.0" />
+            <TextArea fx:id="date_pag" layoutX="332.0" layoutY="121.0" prefHeight="200.0" prefWidth="115.0" />
+            <TextArea fx:id="cod_f_ut" layoutX="441.0" layoutY="121.0" prefHeight="200.0" prefWidth="161.0" />
+            <Label layoutX="4.0" layoutY="91.0" text="Id.Pay">
+               <font>
+                  <Font name="Bernard MT Condensed" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="54.0" layoutY="91.0" text="Meth.Pay">
+               <font>
+                  <Font name="Bernard MT Condensed" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="134.0" layoutY="91.0" text="Type.Payment">
+               <font>
+                  <Font name="Bernard MT Condensed" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="271.0" layoutY="91.0" text="Import">
+               <font>
+                  <Font name="Bernard MT Condensed" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="368.0" layoutY="87.0" text="Date">
+               <font>
+                  <Font name="Bernard MT Condensed" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="454.0" layoutY="87.0" text="Cod.Fisc.Utente">
+               <font>
+                  <Font name="Bernard MT Condensed" size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="ritenta" prefHeight="502.0" prefWidth="603.0" visible="false">
+         <children>
+            <Label layoutX="75.0" layoutY="75.0" text="Username o password non valide" textFill="RED">
+               <font>
+                  <Font name="Bernard MT Condensed" size="36.0" />
+               </font>
+            </Label>
+            <Label layoutX="176.0" layoutY="155.0" text="clicca sul bottone e riprova">
+               <font>
+                  <Font name="Bernard MT Condensed" size="24.0" />
+               </font>
+            </Label>
+            <Button layoutX="249.0" layoutY="251.0" mnemonicParsing="false" onAction="#ritenta_go" text="Riprova">
+               <font>
+                  <Font name="Bernard MT Condensed" size="24.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="ins_gara" prefHeight="502.0" prefWidth="603.0" visible="false">
+         <children>
+            <Label layoutX="91.0" layoutY="14.0" text="Compila i campi per registrare una nuova gara">
+               <font>
+                  <Font name="Bernard MT Condensed" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="26.0" layoutY="99.0" text="~ Inserisci il nome della gara:">
+               <font>
+                  <Font name="Bernard MT Condensed" size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txt_id_gara_" layoutX="317.0" layoutY="101.0" />
+            <Label layoutX="26.0" layoutY="178.0" text="~ Inserisci il prezzo della gara:">
+               <font>
+                  <Font name="Bernard MT Condensed" size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txt_prezzo" layoutX="318.0" layoutY="180.0" />
+            <Label layoutX="26.0" layoutY="243.0" text="~ Inserisci la data(aaaa-mm-gg)">
+               <font>
+                  <Font name="Bernard MT Condensed" size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txt_data" layoutX="344.0" layoutY="245.0" />
+            <Label layoutX="26.0" layoutY="307.0" text="~ Inserisci la location:">
+               <font>
+                  <Font name="Bernard MT Condensed" size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txt_location" layoutX="243.0" layoutY="309.0" />
+            <Button layoutX="248.0" layoutY="398.0" mnemonicParsing="false" onAction="#button_registra_gara" text="Registra">
+               <font>
+                  <Font name="Bernard MT Condensed" size="24.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+    </children>
+</AnchorPane>
